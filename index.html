@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#22272B" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <title>Archi Collector</title>
-    <script type="module" crossorigin src="./assets/index-2ChM1J9M.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Bsu5QLje.css">
+    <script type="module" crossorigin src="./assets/index-CiIBV_Ax.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D5O113pF.css">
   </head>
   <body>
     <main class="inhalt">
@@ -32,9 +32,44 @@
       <section class="seite seite--voll" data-seite="sammlung" hidden>
         <h1 class="seite__titel" data-text="navi.sammlung"></h1>
         <p class="seite__unter" id="sammlung-unter"></p>
-        <h2 class="seite__abschnitt" data-text="sammlung.gebaeude"></h2>
-        <div class="seite__liste" id="sammlung-liste"></div>
-        <p class="seite__hinweis" data-text="sammlung.alben_bald"></p>
+        <div class="umschalter" role="tablist">
+          <button class="umschalter__knopf" type="button" role="tab" data-ansicht="alben" data-text="sammlung.alben"></button>
+          <button class="umschalter__knopf" type="button" role="tab" data-ansicht="gebaeude" data-text="sammlung.gebaeude_tab"></button>
+        </div>
+        <div id="sammlung-alben">
+          <h2 class="seite__abschnitt" data-text="sammlung.zuletzt"></h2>
+          <div class="zuletzt" id="sammlung-zuletzt"></div>
+          <div class="seite__abschnitt-zeile">
+            <h2 class="seite__abschnitt" data-text="sammlung.meine_alben"></h2>
+            <span class="seite__abschnitt-neben" data-text="sammlung.nach_fortschritt"></span>
+          </div>
+          <div class="seite__liste" id="alben-liste"></div>
+        </div>
+        <div id="sammlung-gebaeude" hidden>
+          <div class="seite__liste seite__liste--abstand" id="sammlung-liste"></div>
+        </div>
+      </section>
+
+      <section class="seite seite--voll seite--album" data-seite="album" hidden>
+        <div class="album-kopf">
+          <button class="album-kopf__zurueck" type="button" id="album-zurueck">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+            <span data-text="navi.sammlung"></span>
+          </button>
+          <h1 class="album-kopf__titel" id="album-titel"></h1>
+          <p class="album-kopf__unter" id="album-unter"></p>
+          <div class="album-kopf__fortschritt">
+            <div class="balken balken--dunkel"><div class="balken__fuellung" id="album-balken"></div></div>
+            <strong id="album-zahl"></strong>
+          </div>
+        </div>
+        <div class="filter" id="album-filter">
+          <button class="filter__knopf" type="button" data-filter="alle" data-text="album.alle"></button>
+          <button class="filter__knopf" type="button" data-filter="fehlen" data-text="album.fehlen"></button>
+          <button class="filter__knopf" type="button" data-filter="gesammelt" data-text="album.gesammelt"></button>
+        </div>
+        <div class="kacheln-album" id="album-kacheln"></div>
+        <p class="seite__hinweis album-hinweis" data-text="album.hinweis"></p>
       </section>
 
       <section class="seite seite--voll" data-seite="profil" hidden>
