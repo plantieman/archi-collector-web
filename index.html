@@ -3,22 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#1f2a2e" />
+    <meta name="theme-color" content="#22272B" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <title>Archi Collector</title>
-    <script type="module" crossorigin src="./assets/index-VbKY-T3G.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CCfBC4JM.css">
+    <script type="module" crossorigin src="./assets/index-2ChM1J9M.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Bsu5QLje.css">
   </head>
   <body>
-    <div id="karte"></div>
-    <header class="kopf">
-      <span class="kopf__titel" data-text="app.titel"></span>
-      <span class="kopf__zahl" id="anzahl"></span>
-    </header>
-    <section class="blatt" id="blatt" hidden>
-      <button class="blatt__zu" id="blatt-zu" type="button" data-text-label="blatt.schliessen">×</button>
-      <div id="blatt-inhalt"></div>
-    </section>
+    <main class="inhalt">
+      <!-- Karte: bleibt immer im Hintergrund geladen, damit der Wechsel zurück sofort geht -->
+      <div id="karte"></div>
+
+      <section class="seite seite--karte" data-seite="karte">
+        <div class="leiste-oben" role="group" data-text-label="leiste.titel">
+          <div class="leiste-oben__symbol" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-6h6v6"/></svg>
+          </div>
+          <div class="leiste-oben__zahl"><strong id="zahl-gebaeude">·</strong><span data-text="leiste.gebaeude"></span></div>
+          <div class="leiste-oben__zahl"><strong id="zahl-punkte">·</strong><span data-text="leiste.punkte"></span></div>
+          <div class="leiste-oben__zahl leiste-oben__zahl--hell"><strong id="zahl-alben">·</strong><span data-text="leiste.alben"></span></div>
+        </div>
+        <section class="blatt" id="blatt" hidden>
+          <button class="blatt__zu" id="blatt-zu" type="button" data-text-label="blatt.schliessen">×</button>
+          <div id="blatt-inhalt"></div>
+        </section>
+      </section>
+
+      <section class="seite seite--voll" data-seite="sammlung" hidden>
+        <h1 class="seite__titel" data-text="navi.sammlung"></h1>
+        <p class="seite__unter" id="sammlung-unter"></p>
+        <h2 class="seite__abschnitt" data-text="sammlung.gebaeude"></h2>
+        <div class="seite__liste" id="sammlung-liste"></div>
+        <p class="seite__hinweis" data-text="sammlung.alben_bald"></p>
+      </section>
+
+      <section class="seite seite--voll" data-seite="profil" hidden>
+        <h1 class="seite__titel" data-text="navi.profil"></h1>
+        <p class="seite__unter" data-text="profil.privat"></p>
+        <div class="kacheln">
+          <div class="kachel"><strong id="profil-gebaeude">0</strong><span data-text="leiste.gebaeude"></span></div>
+          <div class="kachel"><strong id="profil-punkte">0</strong><span data-text="leiste.punkte"></span></div>
+          <div class="kachel"><strong id="profil-alben">0</strong><span data-text="leiste.alben"></span></div>
+        </div>
+        <p class="seite__hinweis" data-text="profil.bald"></p>
+      </section>
+    </main>
+
+    <nav class="navi" data-text-label="navi.titel">
+      <button class="navi__knopf" type="button" data-ziel="karte">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>
+        <span data-text="navi.karte"></span>
+      </button>
+      <button class="navi__knopf" type="button" data-ziel="sammlung">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5c3-1.5 7-1.5 10 1 3-2.5 7-2.5 10-1v14c-3-1.5-7-1.5-10 1-3-2.5-7-2.5-10-1z"/><path d="M12 6v14"/></svg>
+        <span data-text="navi.sammlung"></span>
+      </button>
+      <button class="navi__knopf" type="button" data-ziel="profil">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg>
+        <span data-text="navi.profil"></span>
+      </button>
+    </nav>
+
     <div class="meldung" id="meldung" hidden></div>
   </body>
 </html>
