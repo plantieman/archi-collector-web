@@ -1,4 +1,4 @@
 # Archi Collector: Webversion
 
 Automatisch erzeugte Schnellvorschau, nicht von Hand ändern.
-Quellcode: privates Repository plantieman/archi-collector, Stand 4b087d1.
+Quellcode: privates Repository plantieman/archi-collector, Stand 3db5e4f.
