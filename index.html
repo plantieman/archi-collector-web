@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#22272B" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <title>Archi Collector</title>
-    <script type="module" crossorigin src="./assets/index-vgOlO40n.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Z-shPwI4.css">
+    <script type="module" crossorigin src="./assets/index-BMcCBoNk.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DtVT74sV.css">
   </head>
   <body>
     <main class="inhalt">
@@ -81,6 +81,7 @@
         <div class="profil-kopf">
           <button class="profil-bild" id="profil-bild" type="button" data-text-label="profil.bild_aendern"></button>
           <h1 class="profil-titel" id="profil-titel"></h1>
+          <button class="profil-name-knopf" id="profil-name-knopf" type="button"></button>
           <p class="profil-level"><span id="profil-level"></span><span class="profil-privat" data-text="profil.privat"></span></p>
           <div class="profil-fortschritt">
             <div class="balken"><div class="balken__fuellung" id="profil-balken"></div></div>
@@ -123,6 +124,22 @@
           <button class="problem__knopf" id="bildwahl-zu" type="button" data-text="profil.bild_schliessen"></button>
         </div>
       </div>
+    </div>
+
+    <div class="problem" id="namewahl" hidden>
+      <form class="problem__karte" id="namewahl-form" role="dialog" aria-modal="true" aria-labelledby="namewahl-titel" novalidate>
+        <h2 class="problem__titel" id="namewahl-titel" data-text="profil.name_titel"></h2>
+        <p class="problem__unter" data-text="profil.name_unter"></p>
+        <label class="problem__feld"><span data-text="profil.name_feld"></span>
+          <input class="name-feld" id="namewahl-feld" type="text" maxlength="20" autocomplete="nickname" autocapitalize="words" spellcheck="false">
+        </label>
+        <p class="name-fehler" id="namewahl-fehler" role="alert" hidden></p>
+        <div class="problem__leiste">
+          <button class="problem__knopf" id="namewahl-zu" type="button" data-text="profil.name_abbrechen"></button>
+          <button class="problem__knopf problem__knopf--senden" id="namewahl-ok" type="submit" data-text="profil.name_speichern"></button>
+        </div>
+        <button class="name-entfernen" id="namewahl-entfernen" type="button" data-text="profil.name_entfernen" hidden></button>
+      </form>
     </div>
 
     <div class="meldung" id="meldung" hidden></div>
