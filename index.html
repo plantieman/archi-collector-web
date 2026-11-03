@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#22272B" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <title>Archi Collector</title>
-    <script type="module" crossorigin src="./assets/index-DL9fsXTu.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CTOK2v4b.css">
+    <script type="module" crossorigin src="./assets/index-vgOlO40n.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Z-shPwI4.css">
   </head>
   <body>
     <main class="inhalt">
@@ -78,14 +78,24 @@
       </section>
 
       <section class="seite seite--voll" data-seite="profil" hidden>
-        <h1 class="seite__titel" data-text="navi.profil"></h1>
-        <p class="seite__unter" data-text="profil.privat"></p>
-        <div class="kacheln">
+        <div class="profil-kopf">
+          <button class="profil-bild" id="profil-bild" type="button" data-text-label="profil.bild_aendern"></button>
+          <h1 class="profil-titel" id="profil-titel"></h1>
+          <p class="profil-level"><span id="profil-level"></span><span class="profil-privat" data-text="profil.privat"></span></p>
+          <div class="profil-fortschritt">
+            <div class="balken"><div class="balken__fuellung" id="profil-balken"></div></div>
+            <p id="profil-naechstes"></p>
+          </div>
+        </div>
+        <div class="kacheln kacheln--hell">
           <div class="kachel"><strong id="profil-gebaeude">0</strong><span data-text="leiste.gebaeude"></span></div>
           <div class="kachel"><strong id="profil-punkte">0</strong><span data-text="leiste.punkte"></span></div>
           <div class="kachel"><strong id="profil-alben">0</strong><span data-text="leiste.alben"></span></div>
         </div>
-        <p class="seite__hinweis" data-text="profil.bald"></p>
+        <h2 class="seite__abschnitt" data-text="profil.stempel"></h2>
+        <div class="stempel-leiste" id="profil-stempel"></div>
+        <h2 class="seite__abschnitt" data-text="profil.staedte"></h2>
+        <div class="staedte" id="profil-staedte"></div>
       </section>
     </main>
 
@@ -103,6 +113,17 @@
         <span data-text="navi.profil"></span>
       </button>
     </nav>
+
+    <div class="problem" id="bildwahl" hidden>
+      <div class="problem__karte" role="dialog" aria-modal="true" aria-labelledby="bildwahl-titel">
+        <h2 class="problem__titel" id="bildwahl-titel" data-text="profil.bild_titel"></h2>
+        <p class="problem__unter" data-text="profil.bild_unter"></p>
+        <div class="bildwahl" id="bildwahl-liste"></div>
+        <div class="problem__leiste">
+          <button class="problem__knopf" id="bildwahl-zu" type="button" data-text="profil.bild_schliessen"></button>
+        </div>
+      </div>
+    </div>
 
     <div class="meldung" id="meldung" hidden></div>
   </body>
