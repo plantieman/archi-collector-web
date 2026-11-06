@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#22272B" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <title>Archi Collector</title>
-    <script type="module" crossorigin src="./assets/index-BQ6r0v66.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CGqMn2_6.css">
+    <script type="module" crossorigin src="./assets/index-3IdmYLbC.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BvOGpS7i.css">
   </head>
   <body>
     <main class="inhalt">
@@ -98,6 +98,8 @@
         <div class="stempel-leiste" id="profil-stempel"></div>
         <h2 class="seite__abschnitt" data-text="profil.staedte"></h2>
         <div class="staedte" id="profil-staedte"></div>
+        <h2 class="seite__abschnitt" data-text="konto.bereich.titel"></h2>
+        <div id="profil-konto"></div>
         <h2 class="seite__abschnitt" data-text="einstellungen.titel"></h2>
         <label class="einstellung">
           <span class="einstellung__text">
@@ -149,6 +151,10 @@
         </div>
         <button class="name-entfernen" id="namewahl-entfernen" type="button" data-text="profil.name_entfernen" hidden></button>
       </form>
+    </div>
+
+    <div class="problem" id="konto" hidden>
+      <form class="problem__karte" id="konto-form" role="dialog" aria-modal="true" aria-labelledby="konto-titel" novalidate></form>
     </div>
 
     <div class="meldung" id="meldung" hidden></div>
